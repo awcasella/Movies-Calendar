@@ -28,6 +28,49 @@
 		</nav>
 	
 	</header>
+	
+	<div>
+		<img src="imgs/bloodshot.jpeg" id="img-details">	
+	</div>
+	
+	<aside>
+		<div th:each="evento : ${evento}" class="container detalhesEvento">
+			<h5>Detalhes do Evento</h5>
+				<div class="row">
+					<p>Nome: <span th:text="${evento.nome}"></span></p>
+					<p>Local: <span th:text="${evento.local}"></span></p>
+					<p>Data: <span th:text="${evento.data}"></span></p>
+					<p>Horario: <span th:text="${evento.horario}"></span></p>
+				</div>
+			</div>
+			
+				 <th:block th:include="mensagemValidacao"></th:block>
+				<div class="container formConvidado">
+				<form method="post" th:object="${convidado}">
+					Nome: <input type="text" value="" name="nomeConvidado" placeholder="Nome Completo"/>
+					Rg: <input type="text" value="" name="rg" placeholder="AA-00.000.000" class="validate"/>
+					<button class="waves-effect waves-light btn" type="submit">Adicionar</button>
+				</form>
+				</div>
+		
+			<table class="container tabelaConvidado">
+				<thead>
+					<tr>
+						<th>Nome Convidado</th>
+						<th>RG</th>
+						<th>Deletar</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="convidado : ${convidados}">
+						<td><span th:text="${convidado.nomeConvidado}"></span></td>
+						<td><span th:text="${convidado.rg}"></span></td>
+						<td><a class="waves-effect waves-light btn-small" th:href="${(#mvc.url('EC#deletarConvidado').arg(0, convidado.rg)).build()}"><i class="material-icons left">delete</i></a></td>
+					</tr>
+				</tbody>
+			</table>
+	</aside>
+	
 </body>
 
 
