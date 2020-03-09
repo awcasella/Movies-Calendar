@@ -33,9 +33,8 @@
 		
 		<div th:each="movie : ${movie}" class="container detalhesEvento">
 			<h5>Next Release: <span th:text="${movie.title}"></span></h5>
-			<h5>Next Release: <span th:text="${dados1}"></span></h5>
 			
-			<img th:src="@{dados1.imgUrl}" id="img-details"/>
+			<img th:src="${dados1}" id="img-details"/>
 			
 			<div class="row">
 				<p>Genre: <span th:text="${movie.genre}"></span></p>
