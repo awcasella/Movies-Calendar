@@ -43,20 +43,6 @@ public class EventoController {
 		months.put(12, "Dec");
 	}
 	
-	@RequestMapping(value="/index", method=RequestMethod.GET)
-	public ModelAndView formIndex() {
-		ModelAndView mv = new ModelAndView("index");
-		
-		String currentDate = LocalDate.now().toString();
-		List<Evento> evento = erjpa.findByDate(currentDate, JpaSort.unsafe("date"));
-		
-		mv.addObject("dados1", currentDate);
-		mv.addObject("dados2", evento.get(0).getTitle());
-		
-		return mv;
-
-	}
-	
 	@RequestMapping(value="/registerMovie", method=RequestMethod.GET)
 	public String form() {
 		return "_events/formEvento";
