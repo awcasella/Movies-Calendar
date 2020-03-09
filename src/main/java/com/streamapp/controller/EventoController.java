@@ -79,6 +79,8 @@ public class EventoController {
 		Evento evento = er.findByCode(code);
 		ModelAndView mv = new ModelAndView("_events/moviesDetails");
 		mv.addObject("movie", evento);
+		String imgUrl = "/imgs/" + evento.getCode() + ".jpg";
+		mv.addObject("dados1", imgUrl);
 		return mv;
 	}
 }
