@@ -32,7 +32,9 @@
 	<div>
 		
 		<div th:each="movie : ${movie}" class="container detalhesEvento">
-			<img src="imgs/bloodshot.jpeg" id="img-details">
+			
+			<img th:src="${dados1}" id="img-details"/>
+			
 			<h5><span th:text="${movie.title}"></span></h5>
 			<div class="row">
 				<p>Genre: <span th:text="${movie.genre}"></span></p>
