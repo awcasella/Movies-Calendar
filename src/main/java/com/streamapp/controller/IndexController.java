@@ -32,7 +32,7 @@ public class IndexController {
 		List<Evento> evento = erjpa.findByDate(currentDate, JpaSort.unsafe("date"));
 		
 		String imgUrl = "/imgs/" + evento.get(0).getCode() + ".jpg";
-		System.out.println(imgUrl);
+
 		mv.addObject("dados1", imgUrl);
 		mv.addObject("movie", evento.get(0));
 		
