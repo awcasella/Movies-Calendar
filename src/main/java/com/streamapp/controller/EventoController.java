@@ -45,7 +45,7 @@ public class EventoController {
 	
 	@RequestMapping(value="/registerMovie", method=RequestMethod.GET)
 	public String form() {
-		return "_events/formEvento";
+		return "_events/formMovie";
 	}
 	
 	@RequestMapping("/movies")
