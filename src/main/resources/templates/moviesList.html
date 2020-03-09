@@ -50,7 +50,7 @@
 						<td><span th:text="${movie.date}"></span></td>
 						<td><span th:text="${movie.duration}"></span></td>
 						<td>
-						<a class="waves-effect waves-light btn-small" ><i class="material-icons left">delete</i></a>
+						<a th:href="${(#mvc.url('EC#deleteMovie').arg(0, movie.code)).build()}" class="waves-effect waves-light btn-small" ><i class="material-icons left">delete</i></a></td>
 						</td>
 						<td>
 						<a class="waves-effect waves-light btn-small" ><i class="material-icons left">create</i></a>

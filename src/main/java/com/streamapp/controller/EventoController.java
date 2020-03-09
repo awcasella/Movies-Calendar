@@ -78,9 +78,20 @@ public class EventoController {
 	public ModelAndView moviesDetails(@PathVariable("code") long code) {
 		Evento evento = er.findByCode(code);
 		ModelAndView mv = new ModelAndView("_events/moviesDetails");
+		
 		mv.addObject("movie", evento);
+		
 		String imgUrl = "/imgs/" + evento.getCode() + ".jpg";
+		
 		mv.addObject("dados1", imgUrl);
 		return mv;
 	}
+	
+	@RequestMapping("/delete")
+	public String deleteMovie(long code) {
+		Evento evento = er.findByCode(code);
+		er.delete(evento);
+		return "redirect:/movies";
+	}
+	
 }
