@@ -30,10 +30,23 @@
 	</header>
 	
 	<div>
-		Current date: <tr th:text = "${dados1}"></tr>
-		Next Movie: <tr th:text = "${dados2}"></tr>
-	</div>
+		
+		<div th:each="movie : ${movie}" class="container detalhesEvento">
+			<h5>Next Release: <span th:text="${movie.title}"></span></h5>
+			<h5>Next Release: <span th:text="${dados1}"></span></h5>
+			
+			<img th:src="@{dados1.imgUrl}" id="img-details"/>
+			
+			<div class="row">
+				<p>Genre: <span th:text="${movie.genre}"></span></p>
+				<p>Release date: <span th:text="${movie.date}"></span></p>
+				<p>Duration: <span th:text="${movie.duration}"></span></p>
+			</div>
+		</div>
+			
+		<!--<th:block th:include="mensagemValidacao"></th:block>-->
 	
+	</div>
 	
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="materialize/js/materialize.min.js"></script>

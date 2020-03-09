@@ -5,6 +5,15 @@
 	margin-bottom: 60px;
 }
 
+img#img-details{
+	floating: right;
+	width: 25%;	
+}
+
+.row{
+	margin-left: 30%;
+}
+
 .formConvidado{
 	box-shadow: 0px 0px 5px grey;
 	padding-top: 20px;
@@ -45,7 +54,5 @@ h4{
 	padding-right: 5%;
 }
 
-img#img-details{
-	width: 25%;
-	
-}
+
+

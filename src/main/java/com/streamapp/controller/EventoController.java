@@ -78,7 +78,7 @@ public class EventoController {
 	public ModelAndView moviesDetails(@PathVariable("code") long code) {
 		Evento evento = er.findByCode(code);
 		ModelAndView mv = new ModelAndView("_events/moviesDetails");
-		mv.addObject("movieDetails", evento);
+		mv.addObject("movie", evento);
 		return mv;
 	}
 }
